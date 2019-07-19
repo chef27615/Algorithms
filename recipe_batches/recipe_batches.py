@@ -3,8 +3,15 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
-
+  
+  while set(recipe.keys()) == set(ingredients.keys()):
+    key_min = min(recipe.keys(), key=(lambda k: recipe[k]))
+    a = ingredients.get(key_min)
+    b = a//recipe[key_min]
+    return b 
+    
+  else:
+    return 0
 
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
